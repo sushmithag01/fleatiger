@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>208553372865-s6a8g00lfsv0d9thhitfb6etm1pf6gsv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.208553372865-s6a8g00lfsv0d9thhitfb6etm1pf6gsv</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>208553372865-1qtsjlik3kivghqmro1osgf3bae5v93h.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyABF7dwEj7xfzeXRSkVPH6vpirOo1M_5j8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>208553372865</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.fleatiger.fleatigerapp</string>
+	<key>PROJECT_ID</key>
+	<string>fleatiger-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fleatiger-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:208553372865:ios:fe287d78ffb7714b2f3840</string>
+</dict>
+</plist>

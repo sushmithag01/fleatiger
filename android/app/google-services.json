@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "208553372865",
+    "project_id": "fleatiger-app",
+    "storage_bucket": "fleatiger-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208553372865:android:a32ac278f2cd2efc2f3840",
+        "android_client_info": {
+          "package_name": "com.fleatiger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208553372865-mjqmvi8ufcgmp39bd3rn9g1ntm3k255c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fleatiger",
+            "certificate_hash": "517ab49a73fab39f676e4e40c8d2c01b01413385"
+          }
+        },
+        {
+          "client_id": "208553372865-dq8oovdf8pktlteuvnpr60d7n49n1lj5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBicPuUBbgpoc4loRpp5zjppq9e0KZTT18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208553372865-dq8oovdf8pktlteuvnpr60d7n49n1lj5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "208553372865-s6a8g00lfsv0d9thhitfb6etm1pf6gsv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fleatiger"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208553372865:android:11d3de1370db38c22f3840",
+        "android_client_info": {
+          "package_name": "com.fleatiger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208553372865-1qtsjlik3kivghqmro1osgf3bae5v93h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fleatiger",
+            "certificate_hash": "517ab49a73fab39f676e4e40c8d2c01b01413385"
+          }
+        },
+        {
+          "client_id": "208553372865-dq8oovdf8pktlteuvnpr60d7n49n1lj5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBicPuUBbgpoc4loRpp5zjppq9e0KZTT18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208553372865-dq8oovdf8pktlteuvnpr60d7n49n1lj5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "208553372865-s6a8g00lfsv0d9thhitfb6etm1pf6gsv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fleatiger"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

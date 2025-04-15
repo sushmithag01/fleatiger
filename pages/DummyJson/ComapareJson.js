@@ -1,0 +1,90 @@
+const CompareJson = {
+healthScore:[{
+    petname:'Lucy1',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petHealthscore:231
+},{
+    petname:'Lucy2',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petHealthscore:232
+},{
+    petname:'Lucy3',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petHealthscore:233
+},{
+    petname:'Lucy4',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petHealthscore:234
+},{
+    petname:'Lucy5',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petHealthscore:235
+}],
+
+activeTime:[{
+    petname:'Lucy1',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActiveTime:56
+},{
+    petname:'Lucy2',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActiveTime:78
+},{
+    petname:'Lucy3',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActiveTime:89
+},{
+    petname:'Lucy4',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActiveTime:87
+},{
+    petname:'Lucy5',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActiveTime:44
+}],
+activities:[{
+    petname:'Lucy1',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActivities:2
+},{
+    petname:'Lucy2',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActivities:1
+},{
+    petname:'Lucy3',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActivities:4
+},{
+    petname:'Lucy4',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActivities:1
+},{
+    petname:'Lucy5',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petActivities:3
+}],
+energy:[{
+    petname:'Lucy1',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petEnergy:544
+},{
+    petname:'Lucy2',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petEnergy:344
+},{
+    petname:'Lucy3',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petEnergy:678
+},{
+    petname:'Lucy4',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petEnergy:897
+},{
+    petname:'Lucy5',
+    petImg:'https://devapi.fleatiger.com/pets/pet_images/pet_2023-05-31-09-13-16.jpg',
+    petEnergy:976
+}]
+}
+
+export default CompareJson;
+ 

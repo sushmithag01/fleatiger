@@ -1,0 +1,120 @@
+# Resolve react_native_pods.rb with node to allow for hoisting
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
+
+prepare_react_native_project!
+
+# Add this at the top to prevent duplicate GoogleUtilities outputs
+$RNFirebaseAsStaticFramework = true
+use_frameworks! :linkage => :static
+use_modular_headers!
+
+platform :ios, '15.0'
+
+# Explicitly define GoogleUtilities to avoid duplicates
+pod 'GoogleUtilities', :modular_headers => false
+pod 'FirebaseFirestoreSwift'
+pod 'Firebase/Messaging', '~> 10.29.0'
+
+install! 'cocoapods', :disable_input_output_paths => true
+
+linkage = ENV['USE_FRAMEWORKS']
+if linkage != nil
+  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  use_frameworks! :linkage => linkage.to_sym
+end
+
+target 'fleatiger' do
+  config = use_native_modules!
+  
+  # maps
+  # React Native Maps dependencies
+  pod 'Google-Maps-iOS-Utils', '= 5.0.0'
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
+  rn_maps_path = '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', :path => rn_maps_path
+  # end-maps
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  target 'fleatigerTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  post_install do |installer|
+    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
+    find_and_replace("../node_modules/react-native/React/Base/RCTKeyCommands.m",
+                    "_modifierFlags",
+                    "_modifierEventFlags")
+    find_and_replace("../node_modules/react-native/React/Base/RCTKeyCommands.m",
+                    "_modifiedInput",
+                    "_modifiedEventInput")
+    find_and_replace("../node_modules/react-native/React/Base/RCTKeyCommands.m",
+                    "_isKeyDown",
+                    "_isKeyEventDown")
+    find_and_replace("../node_modules/react-native/React/DevSupport/RCTPackagerClient.h",
+                    "handleNotification",
+                    "handlePackageNotification")
+    find_and_replace("../node_modules/react-native/React/DevSupport/RCTPackagerConnection.mm",
+                    "handleNotification",
+                    "handlePackageNotification")
+    
+    react_native_post_install(installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false
+    )
+  
+    # Add these lines for Xcode 14 builds
+    installer.generated_projects.each do |project|
+      project.targets.each do |target|
+        if target.name == "React-Core.common-AccessibilityResources"
+          target.remove_from_project
+        end
+        if target.name == "React-Core.common-RCTVibrationHeaders"
+          target.remove_from_project
+        end
+        
+        # Add this to prevent duplicate GoogleUtilities outputs
+        if target.name == 'GoogleUtilities-Environment-Logger-NSData+zlib-Privacy' || 
+           target.name == 'GoogleUtilities-Environment-Logger-NSData+zlib-Privacy-GoogleUtilities_Privacy'
+          target.remove_from_project
+        end
+        
+        target.build_configurations.each do |config|
+          config.build_settings["DEVELOPMENT_TEAM"] = "6QY4K9CLYD"
+        end
+        
+        if target.name == 'BoringSSL-GRPC'
+          target.source_build_phase.files.each do |file|
+            if file.settings && file.settings['COMPILER_FLAGS']
+              flags = file.settings['COMPILER_FLAGS'].split
+              flags.reject! { |flag| flag == '-GCC_WARN_INHIBIT_ALL_WARNINGS' }
+              file.settings['COMPILER_FLAGS'] = flags.join(' ')
+            end
+          end
+        end
+      end
+    end
+  end
+  
+  def find_and_replace(dir, findstr, replacestr)
+    Dir[dir].each do |name|
+      text = File.read(name)
+      replace = text.gsub(findstr,replacestr)
+      if text != replace
+        puts "Fix: " + name
+        File.open(name, "w") { |file| file.puts replace }
+        STDOUT.flush
+      end
+    end
+    Dir[dir + '*/'].each(&method(:find_and_replace))
+  end
+end
